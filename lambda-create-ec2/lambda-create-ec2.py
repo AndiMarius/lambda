@@ -1,3 +1,10 @@
+'''
+    Create EC2 instance within Lambda Function
+
+    Be carefull of the INSTANCE_TYPE and the SUBNET_ID , not all of them are supported
+'''
+
+
 import os
 import boto3
 
