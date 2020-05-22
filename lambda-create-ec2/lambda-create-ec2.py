@@ -7,6 +7,7 @@
 
 import os
 import boto3
+import json
 
 AMI = os.environ['AMI']
 INSTANCE_TYPE = os.environ['INSTANCE_TYPE']
@@ -26,4 +27,7 @@ def lambda_handler(event, context):
         MinCount=1
     )
 
-    print("New instance created:", instance[0].id)
+    return {
+        'statusCode': 200,
+        'body': json.dumps('EC2 Instance Created!')
+    }
